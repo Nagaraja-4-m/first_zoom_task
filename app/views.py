@@ -12,6 +12,7 @@ def  dashboard(request):
     lang_selected=request.GET.get('language')
     # print(data)
     if lang_selected is not None:
+        data['language']=lang_selected
         scrp_response=scrape_trending_repos(lang_selected)
         if scrp_response['status']==True:
             data['repos_data']=scrp_response['data']

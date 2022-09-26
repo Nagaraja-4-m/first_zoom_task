@@ -27,6 +27,7 @@
 
 {% if user.is_authenticated %}
     <div class="auth">
+        <a class="logout" href="{% url 'account_logout' %}">Sign Out</a>
         <h4> Welcome {{ user.username }}! </h4>
         <br/>
         <p> You  can fetch top trending GitHub repos for particular languages, from a below dropdown like C, JAVA, JavaScript, etc.</p>
@@ -42,8 +43,11 @@
                     </div>
                     <div class="col">
                         <select class="form-control" id="section1" name="language" >
-                            {{ data.languages }}
-                            <option value=""> Select language here </option>
+                            {% if language %}
+                            <option value="{{ language }}" selected> {{ language }} </option>
+                            {% else %}
+                                <option value=""> Select language here </option>
+                            {% endif %}
                             {% for language in languages %}
                                 <option value="{{ language }}">{{ language }} </option>
                             {% endfor %}
@@ -52,7 +56,10 @@
                     <div class="col-2"></div>
                 </div> 
            </form>
-           {% if repos_data %}
+        </div>
+        <br/>
+        {% if repos_data %}
+        <div class="action-area">
             <table class="table table-bordered"> 
                 <thead>
                     <tr>
