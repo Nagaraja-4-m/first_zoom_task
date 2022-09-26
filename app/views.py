@@ -10,14 +10,11 @@ languages=['c','c++','c#','dart','go','java','javascript','php','python','ruby',
 def  dashboard(request):
     data={'languages':languages}
     lang_selected=request.GET.get('language')
-    # print(data)
     if lang_selected is not None:
         data['language']=lang_selected
         scrp_response=scrape_trending_repos(lang_selected)
         if scrp_response['status']==True:
             data['repos_data']=scrp_response['data']
-            print(data)
     else:
-        print("language not selected")
-    # print(User.objects.all())
+        pass
     return render(request,tmp_base_dir+'dashboard.html' ,data)

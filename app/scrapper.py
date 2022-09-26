@@ -20,7 +20,5 @@ def scrape_trending_repos(language, *args, **kwargs):
         repo=link[1:]
         temp={'repo':repo,'url':github_url+link }
         data.append(temp)
-
-    print(data)
-    print(language)
+        
     return {'status':True,'data':data}
