@@ -17,13 +17,12 @@
 </ul>
 
 <h3>Screenshots:</h3>
-
-<img src=" https://user-images.githubusercontent.com/89149882/192283580-01bedd54-7e1d-4f5e-afd3-c16b74c2a4c7.png" width="384" height="180">
-<img src="https://user-images.githubusercontent.com/89149882/192283830-2045b0ae-8e34-4fb6-8a91-051285a7fe34.png" width="384" height="180">
-<img src="https://user-images.githubusercontent.com/89149882/192283881-b9bc988c-9bc0-47ef-8837-f03aada04882.png" width="384" height="180">
-
-<img src="https://user-images.githubusercontent.com/89149882/192284162-b802fa6b-ab8d-4cc5-bc4c-78591b7fe027.png" width="384" height="180">
-<img src="https://user-images.githubusercontent.com/89149882/192284219-13e348b0-458f-4c98-86cb-c84b1e47612c.png" width="384" height="180">
-<img src="https://user-images.githubusercontent.com/89149882/192284297-33fb55b7-2380-4b69-aa60-b31433269948.png" width="384" height="180">
-<img src="https://user-images.githubusercontent.com/89149882/192284381-eda6d588-d033-44d5-864c-b5666fa321a2.png" width="384" height="180">
-
+<div>
+    <img src="https://user-images.githubusercontent.com/89149882/192285150-268a2272-b958-46c1-ad32-d3a18b1a8683.png" width="384" height="180">
+    <img src="https://user-images.githubusercontent.com/89149882/192283830-2045b0ae-8e34-4fb6-8a91-051285a7fe34.png" width="384" height="180">
+    <img src="https://user-images.githubusercontent.com/89149882/192283881-b9bc988c-9bc0-47ef-8837-f03aada04882.png" width="384" height="180">
+    <img src="https://user-images.githubusercontent.com/89149882/192284162-b802fa6b-ab8d-4cc5-bc4c-78591b7fe027.png" width="384" height="180">
+    <img src="https://user-images.githubusercontent.com/89149882/192284219-13e348b0-458f-4c98-86cb-c84b1e47612c.png" width="384" height="180">
+    <img src="https://user-images.githubusercontent.com/89149882/192284297-33fb55b7-2380-4b69-aa60-b31433269948.png" width="384" height="180">
+    <img src="https://user-images.githubusercontent.com/89149882/192284381-eda6d588-d033-44d5-864c-b5666fa321a2.png" width="384" height="180">
+</div>
