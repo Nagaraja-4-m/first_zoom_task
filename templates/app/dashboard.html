@@ -1,0 +1,137 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function()
+      {
+        
+        var $sectionvar=$("#section1");
+        $sectionvar.on('change',function()
+        {
+          $sectionvar.find(":selected").text();
+          url='?language='+$("#section1").find(":selected").val();
+          window.location=url;
+        });
+      }
+      );
+    </script>
+  
+  </head>
+
+{% extends 'app/base.html' %}
+{% block content %}
+{%load static%}
+<head>
+    <!-- stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app_dashboard_styles.css'%}" >
+</head>
+
+{% if user.is_authenticated %}
+    <div class="auth">
+        <h4> Welcome {{ user.username }}! </h4>
+        <br/>
+        <p> You  can fetch top trending GitHub repos for particular languages, from a below dropdown like C, JAVA, JavaScript, etc.</p>
+        <div class="action-area">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <br/>
+                <!-- Language selection  -->
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                        Select Language: 
+                    </div>
+                    <div class="col">
+                        <select class="form-control" id="section1" name="language" >
+                            {{ data.languages }}
+                            <option value=""> Select language here </option>
+                            {% for language in languages %}
+                                <option value="{{ language }}">{{ language }} </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-2"></div>
+                </div> 
+           </form>
+           {% if repos_data %}
+            <table class="table table-bordered"> 
+                <thead>
+                    <tr>
+                        <th style="width:10%"> Sl.no </th>
+                        <th style="width:45%"> Repository </th>
+                        <th style="width:45%"> Url </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for each_repo in repos_data %}
+                        <tr>
+                            <td>
+                                {{ forloop.counter }}
+                            </td>
+                            <td>
+                                {{ each_repo.repo }}
+                            </td>
+                            <td>
+                                <a href="{{ each_repo.url }}" target="_blank">{{ each_repo.url }}</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+           {% endif %}
+        </div>
+    </div>
+{% else %}
+    
+    <div class="un-auth">
+
+        <h3> Hi!, Sorry we don't know who you are. </h3>
+        <p> please <a href="{% url 'account_login' %}">login</a>  to use this site</p>
+    </div>
+    
+    <p> <a href="{% url 'account_login' %}"> here</a></p>
+
+{% endif %} 
+       
+<!-- 
+<div class="auth-form " >
+                <h3>Sign In</h3>
+
+                <hr>
+                <p> Please enter your credentials below to login</p>
+                    {% if msg %}
+                            <p class="error-msg">{{ msg }}</p>
+                    {% endif %}
+                <div>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <br/>
+                        <input type="email" class="form-control" placeholder="Enter email" name="email" required>
+                        <br/>
+                        <input type="password" class="form-control" placeholder="Enter password" name="password" pattern=".{6,}" title="Password should contain atleas 6 characters" required>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-6"><a href="" class="forgot-password"> Forgot password?</a> </div>
+                            <div class="col-lg-6"><input  class="form-control login-btn" type="submit"  name="btn" value="login"></div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col">
+                                Don't have an account? <a href="#"> Sign Up</a></div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col">
+                                Login in with Social accounts
+                            </div>
+                            <div class="col">
+                                Github  
+                            </div>
+                        </div>
+                        
+                   </form>
+                  
+                </div>
+                <br/>
+                
+            </div> -->
+{% endblock content %}
