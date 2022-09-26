@@ -16,7 +16,8 @@
   <li> Run : $python manage.py runserver </li>
 </ul>
 
-Screenshots:
+<h3>Screenshots:</h3>
+
 <img src=" https://user-images.githubusercontent.com/89149882/192283580-01bedd54-7e1d-4f5e-afd3-c16b74c2a4c7.png" width="384" height="180">
 <img src="https://user-images.githubusercontent.com/89149882/192283830-2045b0ae-8e34-4fb6-8a91-051285a7fe34.png" width="384" height="180">
 <img src="https://user-images.githubusercontent.com/89149882/192283881-b9bc988c-9bc0-47ef-8837-f03aada04882.png" width="384" height="180">
